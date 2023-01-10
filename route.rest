@@ -1,6 +1,9 @@
 GET http://localhost:3000/subscribers
+
 ###
-GET http://localhost:3000/subscribers/15
+
+GET http://localhost:3000/subscribers/63bd1733050400ac8d04f983
+
 ###
 POST http://localhost:3000/subscribers
 Content-Type: application/json
