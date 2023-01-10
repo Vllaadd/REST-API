@@ -1,3 +1,4 @@
+const { json } = require('express')
 const express = require('express')
 const router = express.Router()
 const Subscriber = require('../models/subscriber')
@@ -33,8 +34,13 @@ router.patch('/', getSubscriber, (req, res) => {
 
 })
 //Deleting One
-router.delete('/:id', getSubscriber, (req, res)=>{
-    res.subscriber
+router.delete('/:id', getSubscriber, async(req, res)=>{
+    try{
+        await res.subscriber.remove()
+        res.json({message: 'Delete subscriber'})
+    }catch(err){
+        res.status(500).json(message: err.m,essage)
+    }
 })
 
 async function getSubscriber(req, res, next){
